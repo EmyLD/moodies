@@ -11,9 +11,6 @@ const diarySchema = mongoose.Schema({
         type: String,
         required: true
     },
-    pages: {
-        type: Array,
-    },
     date: {
         type: Date,
         default: Date.now

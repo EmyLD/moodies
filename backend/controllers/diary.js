@@ -1,6 +1,7 @@
-const Diary = require('../models/diary')
+const Diary = require('../models/diary');
+const DiaryEntry = require('../models/diaryEntry');
 const jwt = require('jsonwebtoken');
-const User = require('../models/user')
+const User = require('../models/user');
 
 // Add new Diary to User 
 exports.addDiaryToUser = (req, res) => {
@@ -31,3 +32,17 @@ exports.getUserDiary = async (req, res) => {
         res.json(error)
     }
 };
+
+exports.addEntry = async (req, res) => {
+    const userId = jwt.decode(req.headers.authorization.split(' ')[1])
+    const diary = await Diary.findOne({ user_id: userId.userId })
+    const diaryId = diary._id;
+    const newEntry = new DiaryEntry({
+        ...req.body,
+        diary: diaryId
+    })
+
+    newEntry.save()
+        .then(res.json(newEntry))
+        .catch(error => res.json(error))
+}
