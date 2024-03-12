@@ -1,9 +1,9 @@
-import { Text, View } from 'tamagui'
+import { Text, View } from "tamagui";
 
-export default function TabTwoScreen() {
+export default function LogOutScreen() {
   return (
     <View flex={1} alignItems="center">
-      <Text fontSize={20}>Tab Two</Text>
+      <Text fontSize={20}>Log out</Text>
     </View>
-  )
+  );
 }
