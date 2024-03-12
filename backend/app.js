@@ -2,8 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const userRoutes = require('./routes/user');
 const diaryRoutes = require('./routes/diary')
+dotenv = require('dotenv').config();
 
-mongoose.connect('mongodb+srv://emyld:aliment35vibratos@emyld.3pgekxm.mongodb.net/moodies?retryWrites=true&w=majority&appName=Emyld')
+mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('Connexion à MongoDB réussie !'))
     .catch((error) => console.log('Connexion à MongoDB échouée !', error));
 
