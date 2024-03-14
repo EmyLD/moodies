@@ -4,9 +4,7 @@ import { View, Text, Image, ScrollView, TextInput } from "react-native";
 const App = () => {
   return (
     <ScrollView>
-      <Image source={require("../assets/images/logo.png")} style = {{
-        flex
-      }}></Image>
+      <Image source={require("../assets/images/logo.png")} style={{}}></Image>
       <Text>Some text</Text>
       <View>
         <Text>Some more text</Text>
