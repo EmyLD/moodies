@@ -1,7 +1,6 @@
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const utils = require("../utils/checkPwd");
 
 exports.getAllUsers = (req, res, next) => {
   User.find()
