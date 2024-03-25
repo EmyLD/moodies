@@ -1,10 +1,8 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const diaryController = require('../controllers/diary')
-const auth = require('../middleware/auth')
+const diaryController = require("../controllers/diary");
 
-
-router.post('/', auth, diaryController.addDiaryToUser)
-router.get('/', auth, diaryController.getUserDiary)
+router.post("/", diaryController.addDiaryToUser);
+router.get("/:id", diaryController.getUserDiary);
 
 module.exports = router;

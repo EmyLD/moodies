@@ -43,7 +43,10 @@ exports.login = (req, res, next) => {
             message: "Valid password",
           });
         } else {
-          res.status(400).json({ message: "Wrong password" });
+          res.status(400).json({
+            message:
+              "Authentification failed, try again or ask for a new password",
+          });
         }
       });
     }
